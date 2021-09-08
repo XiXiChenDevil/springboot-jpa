@@ -24,6 +24,7 @@ class StudentRepositoryTest {
     public void saveStudent() {
         System.out.println("hello world 1");
         System.out.println("hello world 2");
+        System.out.println("hello world 3");
     }
 
 }
