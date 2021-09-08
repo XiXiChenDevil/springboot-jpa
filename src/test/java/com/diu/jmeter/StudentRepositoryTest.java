@@ -23,6 +23,7 @@ class StudentRepositoryTest {
     @Test
     public void saveStudent() {
         System.out.println("hello world 1");
+        System.out.println("hello world 2");
     }
 
 }
