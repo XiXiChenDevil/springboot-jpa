@@ -30,8 +30,7 @@ public class UserController {
     @RequestMapping(value = "/getUser", method = {RequestMethod.GET})
     public String getUser() {
         if (index >= 5) {
-            System.out.println("404");
-            return "";
+            return "404";
         }
         synchronized (this) {
             index++;

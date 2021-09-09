@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -22,12 +24,9 @@ class StudentRepositoryTest {
 
     @Test
     public void saveStudent() {
-        System.out.println("hello world 1");
-        System.out.println("hello world 2");
-        System.out.println("hello world 3");
-        System.out.println("hello world 4");
-        System.out.println("hot-fix conflict commit");
-        System.out.println("master conflict commit");
+        Student student = new Student(null, 2, "刘舒冉", "lsrs123", 21, "江西南昌", "18154195313",new Timestamp(System.currentTimeMillis()),"200");
+        Student save = studentRepository.save(student);
+        System.out.println(save);
     }
 
 }
