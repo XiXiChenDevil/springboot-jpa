@@ -26,7 +26,7 @@ class StudentRepositoryTest {
     public void saveStudent() {
         Student student = new Student(null, 2, "刘虞诩", "lsrs123", 21, "江西南昌", "18154195313",new Timestamp(System.currentTimeMillis()),"200");
         Student save = studentRepository.save(student);
-        System.out.println("输出的是" + save);
+        System.out.println("数据库增加的数据是：" + save);
     }
 
 }
