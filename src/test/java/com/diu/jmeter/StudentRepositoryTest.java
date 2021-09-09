@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -24,7 +23,7 @@ class StudentRepositoryTest {
 
     @Test
     public void saveStudent() {
-        Student student = new Student(null, 2, "刘虞诩", "lsrs123", 21, "江西南昌", "18154195313",new Timestamp(System.currentTimeMillis()),"200");
+        Student student = new Student(null, 2, "刘虞诩", "lsrs123", 21, "江西南昌", "18154195313", new Timestamp(System.currentTimeMillis()), "200");
         Student save = studentRepository.save(student);
         System.out.println("数据库增加的数据是：" + save);
     }
