@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -22,13 +21,13 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy=javax.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 //    @GenericGenerator(name = "myid", strategy = "com.git.hui.boot.jpa.generator.ManulInsertGenerator")
     @Column(name = "id")
     private Integer id;
     @Column(name = "grade_Id")
     private Integer gradeId;
-    @Column(name = "name")
+    @Column(name = "name", length = 50)
     private String name;
     @Column(name = "password")
     private String password;

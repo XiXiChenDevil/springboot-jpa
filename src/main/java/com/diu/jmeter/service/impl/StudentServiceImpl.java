@@ -32,20 +32,28 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Integer saveStudent(Student student) {
-        Student save = studentRepository.save(student);
-        if (save == null){
-            return 0;
-        }
-        return 1;
+        return this.insertAndUpdate(student);
     }
 
     @Override
     public Integer updateStudent(Student student) {
-        return null;
+        return this.insertAndUpdate(student);
     }
 
     @Override
     public Integer deleteById(Integer id) {
-        return null;
+        if (id == null) {
+            return 0;
+        }
+        studentRepository.deleteById(id);
+        return 1;
     }
+
+    private Integer insertAndUpdate(Student student) {
+        if (studentRepository.save(student) != null) {
+            return 1;
+        }
+        return 0;
+    }
+
 }
